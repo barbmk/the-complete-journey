@@ -40,9 +40,13 @@ The changes in the previous data model are:
 - A new column containing lists with all the days between start_day and end_day per campaign is created on the table campaign_desc.
 - Each value in the lists are converted into a row and the new dataframe is saved as cmpgn_desc_day.
 - cmpgn_desc_day is joined to campaign_table and coupon as they contain fields that are necessary (household_key and product_id, respectivaly) to join campaigns to transaction_data.
-- transaction_data is joined to the dataframe explained in the previous point by household_key, product_id, day and campaign.  As explained before, several campaigns run on the same days for the same households, which makes more difficult matching campaigns to the transactions data.
-- Dropped duplicates and null values in primary key fields. As the final datasets would be saved as CSV files in a S3 bucket, there is no control of null or duplicate values.
-- Wrote the new dataframes to S3 as CSV using PySpark.
+- transaction_data is split in two dataframes. One with the rows that contain discount coupons and one with the rows that do not.
+- The transaction rows that contain discount coupons are joined to the campaign table explained previously by household_key, product_id, day and campaign. This way the dataframe now has a new column called campaign.
+- A new column called campaign is created for the transaction dataframe that do not contain any discount coupons. The values for campaign are all Null. 
+- The dataframe with transactions with discount codes is concatenated to transactions without discount codes.
+- Two boolean new columns are created in the transactions dataframe: basket with discount and basket with campaign.
+- Duplicates and null values are dropped for primary key fields. As the final datasets would be saved as CSV files in a S3 bucket, there is no control of null or duplicate values.
+- The new dataframes are written to S3 as CSV using PySpark.
 - Spark was incorporated to do the data exploration and in all steps of the ETL pipeline.
 
 The data should be updated once a day after the day ends. During a big promotion it can be updated more than once a day as the data for the specific day is added to S3 as a file with a unique title containing the day on it. If it already exists, it will overwrite the previous file.
