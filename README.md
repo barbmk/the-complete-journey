@@ -3,6 +3,10 @@
 The Complete Journey is a group of datasets that collect all the purchases made during 71 weeks by 2500 households who are frequent buyers  at a retailer.
 
 It contains the following tables:<br>
+<p align="center">
+  <img src="http://webanalyticsymas.com/wp-content/uploads/2021/10/tables.png" width="150">
+</p>
+
 ![alt text](http://webanalyticsymas.com/wp-content/uploads/2021/10/tables.png)
 
 The end use of the new data model is to build analytical dashboards in Tableau that will allow the business to: 
