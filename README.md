@@ -55,5 +55,3 @@ The selection of tools used had the objective to achieve a low cost to host the 
 If the data was increased by 100x and needed to run on a daily basis by 7am, using EMR cluster with Airflow is the solution I would go for. 
 If the database needed to be accessed by 100+ people, I would continue having the fact table in S3 and the dimension tables in Redshift, as recommended by AWS.
 
-- Add data dictionary
-
