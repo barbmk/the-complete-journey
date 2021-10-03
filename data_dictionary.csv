@@ -1,0 +1,37 @@
+Table,Column,Data Tyoe,Not null
+transaction_data,household_key,string,Y
+transaction_data,basket_id,string,Y
+transaction_data,day,int,N
+transaction_data,product_id,string,Y
+transaction_data,quantity,int,Y
+transaction_data,sales_value,double,Y
+transaction_data,store_id,string,Y
+transaction_data,retail_disc,double,Y
+transaction_data,trans_time,int,Y
+transaction_data,week_no,int,Y
+transaction_data,coupon_disc,double,Y
+transaction_data,coupon_match_disc,double,Y
+transaction_data,basket_with disc,boolean,Y
+transaction_data,basket_with_camp,boolean,Y
+campaign_desc,description,string,Y
+campaign_desc,campaign,string,N
+campaign_desc,start_day,int,Y
+campaign_desc,end_day,int,Y
+campaign_table,description,string,Y
+campaign_table,household_key,string,Y
+campaign_table,campaign,string,N
+hh_demographic,age_desc,string,Y
+hh_demographic,marital_status_code,string,Y
+hh_demographic,income_desc,string,Y
+hh_demographic,homeowner_desc,string,Y
+hh_demographic,hh_comp_desc,string,Y
+hh_demographic,household_size_desc,string,Y
+hh_demographic,kid_category_desc,string,Y
+hh_demographic,household_key,string,N
+product,product_id,string,N
+product,manufacturer,string,Y
+product,department,string,Y
+product,brand,string,Y
+product,commodity_desc,string,Y
+product,sub_commodity_desc,string,Y
+product,curr_size_of_product,string,Y]
