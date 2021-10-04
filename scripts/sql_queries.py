@@ -29,11 +29,11 @@ CREATE EXTERNAL TABLE stage.transactions (
     "quantity" int,
     "sales_value" double precision,
     "store_id" character varying(45),
-    "coupon_match_disc" double precision,
-    "coupon_disc" double precision,
     "retail_disc" double precision,
     "trans_time" int,
-    "week_no" int)
+    "week_no" int,
+    "coupon_disc" double precision,
+    "coupon_match_disc" double precision)
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE
 LOCATION 's3://dunnhumby-1/stage/transaction_data/transaction_data.csv' 
 TABLE PROPERTIES ('skip.header.line.count'='1');
