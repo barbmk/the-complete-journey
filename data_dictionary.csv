@@ -1,37 +1,38 @@
-Table,Column,Data Tyoe,Not null
-transaction_data,household_key,string,Y
-transaction_data,basket_id,string,Y
-transaction_data,day,int,N
-transaction_data,product_id,string,Y
-transaction_data,quantity,int,Y
-transaction_data,sales_value,double,Y
-transaction_data,store_id,string,Y
-transaction_data,retail_disc,double,Y
-transaction_data,trans_time,int,Y
-transaction_data,week_no,int,Y
-transaction_data,coupon_disc,double,Y
-transaction_data,coupon_match_disc,double,Y
-transaction_data,basket_with disc,boolean,Y
-transaction_data,basket_with_camp,boolean,Y
-campaign_desc,description,string,Y
-campaign_desc,campaign,string,N
-campaign_desc,start_day,int,Y
-campaign_desc,end_day,int,Y
-campaign_table,description,string,Y
-campaign_table,household_key,string,Y
-campaign_table,campaign,string,N
-hh_demographic,age_desc,string,Y
-hh_demographic,marital_status_code,string,Y
-hh_demographic,income_desc,string,Y
-hh_demographic,homeowner_desc,string,Y
-hh_demographic,hh_comp_desc,string,Y
-hh_demographic,household_size_desc,string,Y
-hh_demographic,kid_category_desc,string,Y
-hh_demographic,household_key,string,N
-product,product_id,string,N
-product,manufacturer,string,Y
-product,department,string,Y
-product,brand,string,Y
-product,commodity_desc,string,Y
-product,sub_commodity_desc,string,Y
-product,curr_size_of_product,string,Y]
+Table,Column,Data Tyoe,Not null,Description
+transaction_data,household_key,string,Y,Uniquely identifies each household
+transaction_data,basket_id,string,Y,Uniquely identifies a purchase occasion
+transaction_data,day,int,N,Day when transaction occurred
+transaction_data,product_id,string,Y,Uniquely identifies each product
+transaction_data,quantity,int,Y,Number of products purchased during the trip
+transaction_data,sales_value,double,Y,Amount of dollars retailer receives from sale
+transaction_data,store_id,string,Y,Identified unique stores
+transaction_data,retail_disc,double,Y,Discount applied due to retailer's match of manufacturer coupon
+transaction_data,trans_time,int,Y,Time of day when the transaction occurred
+transaction_data,week_no,int,Y,Week of the transaction. Ranges 1-102
+transaction_data,coupon_disc,double,Y,Discount applied due to retailer's match of manufacturer coupon
+transaction_data,coupon_match_disc,double,Y,Discount applied due to manufacturer coupon
+transaction_data,campaign,string,Y,Uniquely identifies each campaign. Ranges 1-30
+transaction_data,basket_with disc,boolean,Y,Purchase occasions with at least one product bought with a discount coupon 
+transaction_data,basket_with_camp,boolean,Y,Purchase occasions with at least one product bought through a campaign
+campaign_desc,description,string,Y,"Type of campaign (TypeA, TypeB, Type C)"
+campaign_desc,campaign,string,N,Uniquely identifies each campaign. Ranges 1-30
+campaign_desc,start_day,int,Y,Start date of campaign
+campaign_desc,end_day,int,Y,End date of campaign
+campaign_table,description,string,Y,"Type of campaign (TypeA, TypeB, Type C)"
+campaign_table,household_key,string,Y,Uniquely identifies each household
+campaign_table,campaign,string,N,Uniquely identifies each campaign. Ranges 1-30
+hh_demographic,age_desc,string,Y,Estimated age range
+hh_demographic,marital_status_code,string,Y,"Marital status (A-Married, B-Single, U-Unknown)"
+hh_demographic,income_desc,string,Y,Household income
+hh_demographic,homeowner_desc,string,Y,"Homeowner, renter, etc."
+hh_demographic,hh_comp_desc,string,Y,Household composition
+hh_demographic,household_size_desc,string,Y,Size of household up to 5+
+hh_demographic,kid_category_desc,string,Y,Number of children present yo to 3+
+hh_demographic,household_key,string,N,Uniquely identifies each household
+product,product_id,string,N,Uniquely identifies each product
+product,manufacturer,string,Y,Code that links products with same manufacturer together
+product,department,string,Y,Groups similar products together
+product,brand,string,Y,Indicates Private or National label brand
+product,commodity_desc,string,Y,Groups similar products together at a lower level
+product,sub_commodity_desc,string,Y,Groups similar products together at the lowest level
+product,curr_size_of_product,string,Y],Indicates package size
